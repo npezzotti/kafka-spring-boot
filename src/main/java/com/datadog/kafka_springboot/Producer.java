@@ -8,7 +8,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.Random;
+import java.util.UUID;
 
 @Service
 public class Producer {
@@ -24,9 +24,9 @@ public class Producer {
         return "OK";
     }
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 1000)
+    @Scheduled(fixedDelay = 5000, initialDelay = 3000)
     public void generateMessage() {
-        Message message = new Message("Hello World!", new Random().nextInt());
+        Message message = new Message("Hello World!", UUID.randomUUID());
         this.writeMessage(message);
     }
 

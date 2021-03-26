@@ -1,14 +1,16 @@
 package com.datadog.kafka_springboot;
 
+import java.util.UUID;
+
 public class Message {
     String message;
-    Integer userId;
+    UUID userId;
 
     public Message() {
 
     }
 
-    public Message(String message, Integer userId) {
+    public Message(String message, UUID userId) {
         this.message = message;
         this.userId = userId;
     }
@@ -21,11 +23,11 @@ public class Message {
         this.message = message;
     }
 
-    public Integer getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 
