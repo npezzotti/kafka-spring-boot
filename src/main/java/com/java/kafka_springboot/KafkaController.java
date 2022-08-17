@@ -1,5 +1,7 @@
-package com.datadog.kafka_springboot;
+package com.java.kafka_springboot;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -14,7 +16,8 @@ public class KafkaController {
     }
 
     @PostMapping(value = "/publish")
-    public void sendMessageToKafkaTopic(@RequestParam String message, @RequestParam UUID userId) {
+    public ResponseEntity<String> sendMessageToKafkaTopic(@RequestParam String message, @RequestParam UUID userId) {
         this.producer.writeMessage(new Message(message, userId));
+        return new ResponseEntity<String>("OK", HttpStatus.OK);
     }
 }

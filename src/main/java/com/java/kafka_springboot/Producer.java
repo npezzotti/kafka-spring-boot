@@ -1,6 +1,5 @@
-package com.datadog.kafka_springboot;
+package com.java.kafka_springboot;
 
-import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +17,9 @@ public class Producer {
     @Autowired
     private KafkaTemplate<String, Message> kafkaTemplate;
 
-    public String writeMessage(Message message) {
+    public void writeMessage(Message message) {
         this.kafkaTemplate.send(Constants.TOPIC_NAME, message);
         logger.info(String.format("Message sent: %s", message));
-        return "OK";
     }
 
     @Scheduled(fixedDelay = 5000, initialDelay = 3000)

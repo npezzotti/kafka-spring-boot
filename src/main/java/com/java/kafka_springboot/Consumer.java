@@ -1,4 +1,4 @@
-package com.datadog.kafka_springboot;
+package com.java.kafka_springboot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

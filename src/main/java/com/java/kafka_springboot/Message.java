@@ -1,4 +1,4 @@
-package com.datadog.kafka_springboot;
+package com.java.kafka_springboot;
 
 import java.util.UUID;
 
